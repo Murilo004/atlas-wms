@@ -14,7 +14,7 @@ public class Produto
     public string Categoria { get; private set; }
     public decimal PrecoAtual { get; private set; }
     public string? Descricao { get; private set; }
-    public StatusProduto Status { get; private set; }
+    public Status Status { get; private set; }
 
     public Produto(string nome, string categoria, decimal precoAtual, string? descricao)
     {
@@ -27,7 +27,7 @@ public class Produto
         Categoria = categoria;
         PrecoAtual = precoAtual;
         Descricao = descricao;
-        Status = StatusProduto.Ativo;
+        Status = Status.Ativo;
     }
 
     private void ValidarNome(string nome)

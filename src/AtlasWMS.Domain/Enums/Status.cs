@@ -1,6 +1,6 @@
 namespace AtlasWMS.Domain.Enums;
 
-public enum StatusProduto
+public enum Status
 {
     Ativo,
     Inativo
