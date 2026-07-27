@@ -1,0 +1,20 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+
+# Rider
+.idea/
+
+# VS Code (opcional, dependendo do template)
+.vscode/
+
+# Arquivos temporários
+*.user
+*.suo
+*.cache
+
+# Logs
+*.log
