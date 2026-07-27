@@ -6,17 +6,16 @@ namespace AtlasWMS.Domain.Entities;
 public class Produto
 {
     private const int TamanhoMaximoNome = 50;
-    private const int TamanhoMaximoCategoria = 50;
     private const int TamanhoMaximoDescricao = 500;
 
     public int Id { get; private set; }
     public string Nome { get; private set; }
-    public string Categoria { get; private set; }
+    public Categoria Categoria { get; private set; }
     public decimal PrecoAtual { get; private set; }
     public string? Descricao { get; private set; }
     public Status Status { get; private set; }
 
-    public Produto(string nome, string categoria, decimal precoAtual, string? descricao)
+    public Produto(string nome, Categoria categoria, decimal precoAtual, string? descricao)
     {
         ValidarNome(nome);
         ValidarCategoria(categoria);
@@ -43,16 +42,11 @@ public class Produto
         }
     }
 
-    private void ValidarCategoria(string categoria)
+    private void ValidarCategoria(Categoria categoria)
     {
-        if(string.IsNullOrWhiteSpace(categoria))
+        if (categoria == null)
         {
             throw new ProdutoException("A categoria do produto é obrigatória.");
-        }
-
-        if(categoria.Length > TamanhoMaximoCategoria)
-        {
-            throw new ProdutoException("A categoria do produto não pode ultrapassar 50 caracteres.");
         }
     }
 
